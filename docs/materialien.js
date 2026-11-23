@@ -24,6 +24,43 @@ document.querySelectorAll('[data-interview-theme]').forEach(topic => {
   });
 });
 
+// Native controls remain usable without JavaScript. Chapter playback requires a click.
+const interviewAudio = document.querySelector('#interview-audio');
+const audioChapterButtons = [...document.querySelectorAll('[data-audio-start]')];
+const audioStatus = document.querySelector('#interview-audio-status');
+let pendingAudioSeek = null;
+let audioPlayRequest = 0;
+document.querySelector('.interview-audio-chapters').hidden = false;
+
+function applyAudioSeek() {
+  if (pendingAudioSeek === null || interviewAudio.readyState < 1) return;
+  interviewAudio.currentTime = Math.min(pendingAudioSeek, interviewAudio.duration || pendingAudioSeek);
+  pendingAudioSeek = null;
+}
+interviewAudio.addEventListener('loadedmetadata', applyAudioSeek);
+audioChapterButtons.forEach(button => button.addEventListener('click', () => {
+  const request = ++audioPlayRequest;
+  pendingAudioSeek = Number(button.dataset.audioStart);
+  document.querySelector(`[data-interview-theme="${button.dataset.audioTheme}"]`).open = true;
+  applyAudioSeek();
+  audioStatus.textContent = `Ab ${button.innerText.trim().replace(/\s+/g, ' ')}.`;
+  interviewAudio.play().catch(error => {
+    if (request === audioPlayRequest && error.name !== 'AbortError') {
+      audioStatus.textContent = 'Bitte starte die Wiedergabe über Play im Audioplayer. Du kannst die MP3 auch herunterladen.';
+    }
+  });
+}));
+interviewAudio.addEventListener('timeupdate', () => {
+  const current = audioChapterButtons.filter(button => Number(button.dataset.audioStart) <= interviewAudio.currentTime).at(-1);
+  audioChapterButtons.forEach(button => {
+    if (button === current) button.setAttribute('aria-current', 'true');
+    else button.removeAttribute('aria-current');
+  });
+});
+interviewAudio.addEventListener('error', () => {
+  audioStatus.textContent = 'Die Audiodatei konnte nicht geladen werden. Versuche es erneut oder nutze den MP3-Download.';
+});
+
 // Reveal the measured bars once; never hide data when motion or scripting is off.
 let reportAnimation;
 let reportSeen = false;
