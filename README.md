@@ -28,4 +28,6 @@ Bildquellen stehen in [ASSETS.md](ASSETS.md), die MIT-Lizenz von Motion in [docs
 
 Der Trendreport 2026 ist als PDF unter `docs/material/` eingebunden. `materialien.css` und `materialien.js` ergänzen einen interaktiven Vergleich der SEM-Salden 2023 bis 2025, separat ausgewiesene Halbjahresdaten 2026, eine Einordnung des Szenarios 2030 und thematische Interviewauszüge mit Zeitmarken. Die Definitionen von SEM und BFS bleiben getrennt. Das Quiz enthält nun sieben Fragen; der Portfolio-Impuls bezieht beide Quellen ein.
 
-Das Interview ist zusätzlich als MP3 mit Originalton eingebunden: `docs/material/interview-migration.mp3` (10:35 Minuten, ca. 7,6 MB, Mono mit 96 kbit/s). Der native Audioplayer startet ohne Autoplay und lädt zunächst nur Metadaten. Vier Kapitelbuttons springen zur passenden Stelle und öffnen die zugehörige Zusammenfassung. Ein direkter Download bleibt auch ohne JavaScript verfügbar.
+Der Originalton der Online-Besprechung ist zusätzlich als MP3 eingebunden: `docs/material/interview-migration.mp3` (10:35 Minuten, ca. 7,6 MB, Mono mit 96 kbit/s). Der native Audioplayer startet ohne Autoplay und lädt zunächst nur Metadaten. Vier Kapitelbuttons springen zur passenden Stelle und öffnen die zugehörige Zusammenfassung. Ein direkter Download bleibt auch ohne JavaScript verfügbar.
+
+Die Aufnahme stammt aus einer Online-Besprechung. Das genaue Gesprächsdatum ist nicht bekannt; das Datum im ursprünglichen Dateinamen ist kein gesichertes Aufnahmedatum.
