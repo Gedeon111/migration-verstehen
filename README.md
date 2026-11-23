@@ -18,8 +18,12 @@ Dateien in `docs/` bearbeiten, committen und auf `main` pushen. GitHub Pages ver
 
 ## Inhalte und Datenschutz
 
-Die Inhalte behandeln Ursachen und Folgen der Migration, Schweizer Migrationsgeschichte, Menschenwürde und drei mögliche Zukunftsszenarien. Quellen und redaktioneller Stand stehen auf der Webseite. Fotos dienen als Symbolbilder; die Beispiele sind erfunden.
+Die Inhalte behandeln Ursachen und Folgen der Migration, Schweizer Migrationsgeschichte, Menschenwürde und drei mögliche Zukunftsszenarien. Quellen und redaktioneller Stand stehen auf der Webseite. Fotos dienen als Symbolbilder; die didaktischen Fallbeispiele sind erfunden. Der zusätzliche Interviewabschnitt fasst ein bereitgestelltes Einzelinterview sinngemäss und ohne Namen zusammen. Das Originalvideo und das automatische Rohtranskript werden nicht veröffentlicht.
 
 Portfolio-Notizen werden nur im Browser gespeichert und können als Text heruntergeladen werden. Das Repository enthält keine persönlichen Portfolioeinträge. Die Notizen werden weder an GitHub noch an einen anderen Server gesendet. Die Speicherung gehört zur jeweiligen Webseitenadresse; Notizen der früheren Webseite werden nicht automatisch übernommen.
 
 Bildquellen stehen in [ASSETS.md](ASSETS.md), die MIT-Lizenz von Motion in [docs/vendor/MOTION-LICENSE.txt](docs/vendor/MOTION-LICENSE.txt).
+
+## Ergänzungen vom 23. November 2026
+
+Der Trendreport 2026 ist als PDF unter `docs/material/` eingebunden. `materialien.css` und `materialien.js` ergänzen einen interaktiven Vergleich der SEM-Salden 2023 bis 2025, separat ausgewiesene Halbjahresdaten 2026, eine Einordnung des Szenarios 2030 und thematische Interviewauszüge mit Zeitmarken. Die Definitionen von SEM und BFS bleiben getrennt. Das Quiz enthält nun sieben Fragen; der Portfolio-Impuls bezieht beide Quellen ein.

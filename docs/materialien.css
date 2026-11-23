@@ -1,0 +1,82 @@
+/* New source material uses the existing atlas palette and typography. */
+.material-shortcut{display:inline-block;margin-top:24px;font-size:14px;text-decoration:underline;text-underline-offset:5px;color:var(--forest)}
+.report-section{background:#edf2f5;border-block:1px solid #d9e3e8}
+.report-section .section-heading>p,.interview-section .section-heading>p{font-size:16px;line-height:1.8}
+.report-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px;align-items:stretch}
+.migration-chart{background:#fff;padding:32px;border-radius:8px;min-width:0}
+.migration-chart h3{font-size:23px;letter-spacing:-.035em;line-height:1.3}
+.chart-help{font-size:14px;color:var(--muted);margin-block:10px 28px}
+.chart-ruler{display:flex;justify-content:space-between;margin:0 88px 13px 60px;font-size:12px;color:#526773;font-variant-numeric:tabular-nums}
+.migration-bars{display:grid;gap:12px}
+.migration-bar{display:grid;grid-template-columns:48px minmax(0,1fr) 76px;gap:12px;align-items:center;border:0;background:transparent;color:var(--ink);padding:12px 0;min-height:52px;text-align:left;border-radius:3px;font-variant-numeric:tabular-nums}
+.migration-bar>span:first-child{font-size:15px}
+.migration-bar>strong{text-align:right;font-size:16px;font-weight:550}
+.migration-bar-track{display:block;background:repeating-linear-gradient(to right,#dce4e9 0 1px,transparent 1px 25%);height:32px;border-right:1px solid #dce4e9;position:relative}
+.migration-bar-fill{display:block;position:absolute;inset:5px auto 5px 0;width:var(--bar);background:#a7bdc9;border-radius:0 3px 3px 0;transform-origin:left;transition:background .2s}
+.migration-bar[aria-pressed=true] .migration-bar-fill{background:#173b50}
+.migration-bar[aria-pressed=true]>strong{font-weight:750}
+.migration-bar:hover .migration-bar-fill{background:#315740}
+.chart-caption{font-size:14px;line-height:1.7;margin-top:25px;color:#526773}
+.chart-caption a,.report-definition a,.material-context a,.report-sources a,.interview-method a{text-decoration:underline;text-underline-offset:3px}
+.report-reading{background:#173b50;color:#fff;padding:32px;border-radius:8px;display:flex;flex-direction:column;align-items:flex-start}
+.report-reading .reading-year{font-size:16px;color:#d3e1e8;margin-bottom:12px}
+.report-reading>strong{font-family:var(--display);font-size:clamp(44px,5vw,64px);letter-spacing:-.06em;line-height:1.2;font-weight:550;font-variant-numeric:tabular-nums}
+.report-reading h3{font-size:20px;margin-top:16px;line-height:1.4}
+.report-reading>p{font-size:16px;color:#e1ebef;margin-top:13px;line-height:1.8}
+.report-reading .half-year{border-top:1px solid #537383;padding-top:19px;margin-top:26px;font-size:14px;line-height:1.8}
+.half-year strong{display:block;color:#fff;font-size:16px}
+.half-year a{text-decoration:underline;text-underline-offset:3px}
+.report-definition{margin-top:22px;border-block:1px solid #c9d7df;font-size:16px}
+.report-definition summary,.report-outlook summary{padding:20px 0;cursor:pointer;min-height:60px;line-height:1.6;list-style:none}
+.report-definition summary:after,.report-outlook summary:after{content:'+';float:right;margin-left:12px}
+.report-definition[open] summary:after,.report-outlook[open] summary:after{content:'−'}
+.definition-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;padding-bottom:25px}
+.definition-grid h4{font-size:17px;letter-spacing:-.02em;margin-bottom:10px}
+.definition-grid p{font-size:15px;line-height:1.8;color:#405c6b;max-width:65ch}
+.report-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px;margin-top:42px}
+.report-facts article{min-width:0;border-top:2px solid #90a9b6;padding-top:19px}
+.report-facts article>span{font-size:14px;color:#526773}
+.report-facts article>strong{display:block;font-family:var(--display);font-size:36px;letter-spacing:-.05em;line-height:1.3;margin-top:10px;font-weight:550}
+.report-facts h3{font-size:18px;margin-top:10px;letter-spacing:-.025em;line-height:1.4}
+.report-facts p{font-size:15px;line-height:1.8;margin-top:12px;color:#405c6b}
+.report-facts a{display:inline-block;font-size:14px;text-decoration:underline;text-underline-offset:4px;margin-top:13px}
+.report-outlook{margin-top:35px;border-block:1px solid #c9d7df}
+.outlook-body{display:grid;grid-template-columns:.75fr 1.25fr;gap:40px;padding-block:8px 28px}
+.outlook-number{font-size:44px;font-family:var(--display);letter-spacing:-.05em;line-height:1.2}
+.outlook-number small{display:block;font-size:14px;font-family:var(--sans);letter-spacing:0;margin-top:12px;color:#526773}
+.outlook-body p,.outlook-body li{font-size:16px;line-height:1.8;max-width:65ch}
+.outlook-body ul{padding-left:20px;margin-block:13px 0}
+.report-sources{display:flex;align-items:center;gap:20px 30px;flex-wrap:wrap;margin-top:27px;font-size:14px;line-height:1.8;color:#405c6b}
+.report-sources a{font-size:16px;font-weight:550;color:var(--ink)}
+.interview-section{border-top:1px solid var(--line)}
+.interview-layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:70px;align-items:start}
+.interview-visual{position:sticky;top:110px;min-width:0}
+.arrival-illustration{background:#e7eddf;border-radius:8px;padding:28px 20px 20px;position:relative;overflow:hidden}
+.arrival-illustration svg{display:block;width:100%;height:auto;color:#315740}
+.arrival-illustration .arrival-symbol{opacity:.35;transition:opacity .25s}
+.arrival-illustration[data-theme=language] .symbol-language,.arrival-illustration[data-theme=work] .symbol-work,.arrival-illustration[data-theme=belonging] .symbol-belonging,.arrival-illustration[data-theme=support] .arrival-symbol{opacity:1}
+.arrival-labels{display:flex;justify-content:space-between;gap:10px;margin-top:16px;font-size:14px;color:#315740;padding-inline:6px}
+.interview-visual figcaption{font-size:14px;line-height:1.8;color:var(--muted);margin-top:15px}
+.interview-reflection{margin-top:27px;border-left:3px solid #8fab75;padding-left:21px}
+.interview-reflection h3{font-size:20px;line-height:1.4;margin-bottom:10px}
+.interview-reflection p{font-size:16px;line-height:1.8;max-width:45ch}
+.interview-topics{border-top:1px solid #bbcabb}
+.interview-topics details{border-bottom:1px solid #bbcabb}
+.interview-topics summary{display:flex;align-items:center;gap:18px;padding-block:23px;cursor:pointer;list-style:none;font-size:20px;font-weight:550;line-height:1.4}
+.interview-topics summary:after{content:'+';font-size:25px;font-weight:400;margin-left:auto;padding-left:5px}
+.interview-topics details[open] summary:after{content:'−'}
+.interview-time{font-size:14px;font-weight:450;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap;min-width:43px}
+.interview-topic-body{padding:0 0 26px 61px}
+.interview-topic-body>p{font-size:16px;line-height:1.85;max-width:60ch}
+.interview-topic-body .interview-connection{margin-top:17px;color:#315740;background:#eaf0e3;padding:14px 17px;border-radius:4px;font-size:15px;line-height:1.8}
+.interview-connection strong{display:block;margin-bottom:4px}
+.interview-method{margin-top:32px;border-top:1px solid var(--line);padding-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.interview-method h3{font-size:18px;margin-bottom:10px}
+.interview-method p{font-size:14px;line-height:1.9;color:var(--muted);max-width:65ch}
+.material-context{font-size:15px;line-height:1.8;margin-top:25px;color:var(--muted)}
+.material-source-list p{font-size:14px;line-height:1.8;color:var(--muted);padding-bottom:18px}
+@media(max-width:1000px){.report-layout{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}.migration-chart,.report-reading{padding:24px}.chart-ruler{font-size:11px}.interview-layout{gap:40px}.report-facts{gap:24px}}
+@media(max-width:720px){.report-layout,.interview-layout{grid-template-columns:minmax(0,1fr)}.report-section .section-heading>p,.interview-section .section-heading>p{font-size:16px}.report-reading{display:grid;grid-template-columns:1fr 1fr;gap:8px 24px}.report-reading .reading-year,.report-reading>strong{grid-column:1}.report-reading h3{grid-column:2;grid-row:1/3;align-self:center;margin:0}.report-reading>p,.report-reading .half-year{grid-column:1/-1}.report-reading>strong{font-size:48px}.report-reading>p{margin-top:10px}.report-reading .half-year{margin-top:12px;padding-top:14px}.report-facts{gap:25px;grid-template-columns:minmax(0,1fr)}.report-facts article{display:grid;grid-template-columns:115px minmax(0,1fr);gap:0 25px}.report-facts article>span,.report-facts article>strong{grid-column:1}.report-facts article>span{font-size:13px}.report-facts article>strong{font-size:29px}.report-facts article>h3{grid-column:2;grid-row:1/3;margin-top:0;align-self:center}.report-facts article>p,.report-facts article>a{grid-column:1/-1}.report-facts article>p{margin-top:15px}.definition-grid,.outlook-body,.interview-method{grid-template-columns:minmax(0,1fr);gap:22px}.interview-visual{position:static;display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center}.interview-visual figure{min-width:0}.interview-reflection{margin:0;padding-left:18px}.interview-reflection h3{font-size:18px}.interview-reflection p{font-size:15px}.arrival-illustration{padding:17px 10px}.arrival-labels{font-size:12px;padding:0;gap:5px}.interview-visual figcaption{font-size:12px}.interview-layout{gap:30px}.outlook-body ul{padding-left:18px}.report-sources{gap:12px}}
+@media(max-width:420px){.migration-chart{padding:23px 18px}.migration-chart h3{font-size:21px}.migration-bar{grid-template-columns:39px minmax(0,1fr) 63px;gap:8px}.migration-bar>strong{font-size:14px}.migration-bar>span:first-child{font-size:14px}.chart-ruler{margin-left:47px;margin-right:71px;font-size:10px}.chart-ruler span:nth-child(2),.chart-ruler span:nth-child(4){visibility:hidden}.report-reading{gap:8px 14px}.report-reading h3{font-size:17px}.report-reading>strong{font-size:40px}.interview-visual{grid-template-columns:minmax(0,1fr)}.arrival-illustration{padding:23px}.arrival-illustration svg{max-height:170px}.arrival-labels{font-size:14px}.interview-reflection{margin-top:0}.interview-topics summary{font-size:18px;gap:12px}.interview-topic-body{padding-left:0}.report-definition summary,.report-outlook summary{padding-right:15px}}
+@media(prefers-reduced-motion:reduce){.migration-bar-fill,.arrival-symbol{transition:none}}
+@media print{.report-layout,.interview-layout,.definition-grid,.outlook-body,.interview-method{display:block}.report-reading{background:#edf2f5;color:var(--ink)}.report-reading>p,.report-reading .reading-year,.half-year strong{color:var(--ink)}.interview-visual{position:static;max-width:400px}.report-facts{display:block}.report-facts article{margin-block:20px}.report-section details:not([open])>*:not(summary),.interview-section details:not([open])>*:not(summary){display:block}.report-section,.interview-section{break-inside:auto}.report-reading>strong{font-size:35px}}
