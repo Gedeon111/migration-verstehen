@@ -172,43 +172,10 @@ $('#quiz-next').addEventListener('click', () => {
   setText('#quiz-progress-label', 'Quiz abgeschlossen');
   const scoreElement = document.createElement('div'); scoreElement.className = 'result-score'; scoreElement.textContent = `${score} / ${questions.length}`;
   const heading = document.createElement('h3'); heading.textContent = score === questions.length ? 'Alle Antworten richtig.' : 'Dein Ergebnis';
-  const explanation = document.createElement('p'); explanation.textContent = score === questions.length ? 'Alle Fragen richtig. Halte im Portfolio fest, welche Erkenntnis du mitnimmst.' : 'Jede Frage ist ein Anlass zum Weiterdenken. Lies die passenden Kapitel noch einmal und probiere es erneut.';
+  const explanation = document.createElement('p'); explanation.textContent = score === questions.length ? 'Alle sieben Fragen richtig beantwortet.' : 'Jede Frage ist ein Anlass zum Weiterdenken. Lies die passenden Kapitel noch einmal und probiere es erneut.';
   const retry = document.createElement('button'); retry.type = 'button'; retry.className = 'button button-dark'; retry.textContent = 'Noch einmal testen';
   retry.addEventListener('click', () => { questionIndex = 0; score = 0; renderQuestion(); $('.quiz-option').focus({ preventScroll: true }); });
-  const portfolioLink = document.createElement('a'); portfolioLink.href = '#portfolio'; portfolioLink.className = 'underlined-link'; portfolioLink.textContent = 'Im Portfolio weiterdenken'; portfolioLink.style.marginLeft = '16px';
-  $('#quiz-result').className = 'quiz-result'; $('#quiz-result').replaceChildren(scoreElement, heading, explanation, retry, portfolioLink); $('#quiz-result').hidden = false;
+  $('#quiz-result').className = 'quiz-result'; $('#quiz-result').replaceChildren(scoreElement, heading, explanation, retry); $('#quiz-result').hidden = false;
   retry.focus({ preventScroll: true });
 });
 renderQuestion();
-
-const portfolioKey = 'weiter-migration-portfolio-v1';
-const fields = ['learning', 'analysis', 'future'];
-const portfolioLabels = { learning: 'Was habe ich verstanden?', analysis: 'Welche Frage beschäftigt mich?', future: 'Mein Leben in zehn Jahren' };
-let saveTimer;
-function portfolioData() { return Object.fromEntries(fields.map((field) => [field, $(`[name="${field}"]`).value])); }
-try {
-  const raw = localStorage.getItem(portfolioKey);
-  if (raw) {
-    const data = JSON.parse(raw);
-    fields.forEach((field) => { if (typeof data[field] === 'string') $(`[name="${field}"]`).value = data[field]; });
-    if (fields.some((field) => typeof data[field] === 'string' && data[field].trim())) setText('#portfolio-status', 'Deine gespeicherten Notizen sind wieder da.');
-  }
-} catch { setText('#portfolio-status', 'Browserspeicher nicht verfügbar. Bitte exportiere deine Notizen.'); }
-function savePortfolio() {
-  try { localStorage.setItem(portfolioKey, JSON.stringify(portfolioData())); setText('#portfolio-status', 'Automatisch in diesem Browser gespeichert.'); }
-  catch { setText('#portfolio-status', 'Speichern nicht möglich. Bitte sichere deine Notizen mit dem Download.'); }
-}
-$('#portfolio-form').addEventListener('submit', (event) => event.preventDefault());
-$('#portfolio-form').addEventListener('input', () => { clearTimeout(saveTimer); setText('#portfolio-status', 'Wird gespeichert …'); saveTimer = setTimeout(savePortfolio, 400); });
-window.addEventListener('pagehide', () => { if (saveTimer) { clearTimeout(saveTimer); savePortfolio(); } });
-$('#portfolio-export').addEventListener('click', () => {
-  const data = portfolioData();
-  if (fields.every((field) => !data[field].trim())) { setText('#portfolio-status', 'Schreibe zuerst eine Notiz. Danach kannst du dein Portfolio herunterladen.'); $('#portfolio-learning').focus(); return; }
-  clearTimeout(saveTimer); savePortfolio();
-  const date = new Intl.DateTimeFormat('de-CH', { dateStyle: 'long' }).format(new Date());
-  const text = ['Mein Portfolio. Migration verstehen', `Exportiert am ${date}`, '', ...fields.flatMap((field) => [portfolioLabels[field], data[field].trim() || '(Noch keine Notiz)', '']), 'Erstellt mit weiter. Der Lernatlas zur Migration'].join('\n');
-  const url = URL.createObjectURL(new Blob(['\uFEFF' + text], { type: 'text/plain;charset=utf-8' }));
-  const link = document.createElement('a'); link.href = url; link.download = 'Mein-Portfolio-Migration.txt'; document.body.append(link); link.click(); link.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-  setText('#portfolio-status', 'Portfolio-Download gestartet. Deine Notizen bleiben im Browser gespeichert.');
-});
